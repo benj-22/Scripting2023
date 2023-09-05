@@ -1,3 +1,5 @@
+using System;
+
 public class ClassLearn 
 {
 	public int numberCountForHealth;
