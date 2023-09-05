@@ -24,5 +24,5 @@ public class Weapon {
 }
 
 public class PowerUp {
-	public float powerLevel = 2.5f;
+	public float powerLevel = 2.7f;
 }
