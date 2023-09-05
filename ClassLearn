@@ -1,6 +1,7 @@
 public class ClassLearn 
 {
-	public int number;
+	public int numberCountForHealth;
+	Public Health playerHealth;
 	
 	public void RunExample()
 	{
