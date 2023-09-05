@@ -1,0 +1,9 @@
+public class ClassLearn 
+{
+	public int number;
+	
+	public void RunExample()
+	{
+		Console.WriteLine("Hello World!");
+	}
+}
