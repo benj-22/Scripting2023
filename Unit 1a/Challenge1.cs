@@ -90,12 +90,16 @@ public class Program{ //this class deals with all the specifications of the prog
 		
 		int levUp = hero.lev + intTemp; //since the input is now an integer, the two can be added together
 		Console.WriteLine("Congrats! You are now level " + levUp);
+<<<<<<< HEAD
 		Console.Write("Wait, there's someone coming! Press any key to wave hello: ");
 		Console.ReadLine();
+=======
+>>>>>>> main
 		
 		int teamMem = 3;
 		Console.WriteLine("Party members has increased to " + teamMem);
 		Console.WriteLine(heroName + "'s xp will be divided between all party members");
+<<<<<<< HEAD
 		
 		int teamLev = levUp / teamMem; //ok now i needed to add some reason to have a '%' operation...
 		int levUp2 = hero.lev + teamLev; //the only thing that really made sense is to add some party members and split the "xp"
@@ -104,6 +108,9 @@ public class Program{ //this class deals with all the specifications of the prog
 		
 		Console.WriteLine(heroName + " gained " + teamLev + " levels! " + heroName + "'s level is now " + levUp2);
 		Console.WriteLine("There was also a little bit left over! " + heroName + "gets the remainder of " + remain + "! " + heroName + "'s level is now " + levUp3);
+=======
+
+>>>>>>> main
 	}
 	
 	public class Character{ //this is another class where information about the character is stored
