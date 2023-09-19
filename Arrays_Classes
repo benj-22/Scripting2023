@@ -1,0 +1,25 @@
+using System;
+					
+public class Program
+{
+	public void Main()
+	{
+		weapon[] weaponsObjs = {new weapon(), new weapon(), new weapon()};
+		weaponsObjs[1].weaponName = "Longsword";
+		weaponsObjs[2].weaponName = "Staff";
+		
+		for(var i = 0; i < weaponsObjs.Length; i++){
+			weaponsObjs[i].powerLevel = 2;
+		}
+		
+		foreach(var item in weaponsObjs){
+			Console.WriteLine(item.weaponName);
+			Console.WriteLine(item.powerLevel);
+		}
+	}
+}
+
+public class weapon {
+	public string weaponName = "Battleaxe";
+	public int powerLevel = 1;
+}
