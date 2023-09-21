@@ -4,23 +4,23 @@ public class Program
 {
 	public static void Main()
 	{
-		Console.WriteLine("Please enter your 3 favorite foods: ");
-		food[] favFood = {new food(), new food(), new food()};
+		Console.WriteLine("Please enter your 3 favorite foods: "); //this starts the user off with a prompt
+		food[] favFood = {new food(), new food(), new food()}; //this declares the new array. Multiple to-be-determined items can be added due to a new class
 		
-		for (var i = 0; i > 3; i++)
+		for (var i = 0; i > 3; i++) //the for loop will ask the user to input a new item as long as i is less than 3, meaning it will get 3 inputs
 		{
-			favFood[i].foodNam = Console.ReadLine();
+			favFood[i].foodNam = Console.ReadLine(); //the position of "i" in each loop around will take the form of the user's input
 		}
 
-		Console.WriteLine("These are your favorite foods:");
-		foreach (var item in favFood)
+		Console.WriteLine("These are your favorite foods:"); //user stuff
+		foreach (var item in favFood) //for each does this action for as many items as are in the array
 		{
-			Console.WriteLine(item.foodNam);
+			Console.WriteLine(item.foodNam); //prints the name of the item in a list
 		}
 	}
 }
 
 public class food
 {
-	public string foodNam = Console.ReadLine();
+	public string foodNam = Console.ReadLine(); //not really sure why this works, but I put it here to make the script recognize the inputs going into the array as strings. And it worked, so no harm done
 }
