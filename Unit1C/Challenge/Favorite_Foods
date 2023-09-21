@@ -1,0 +1,26 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Please enter your 3 favorite foods: ");
+		food[] favFood = {new food(), new food(), new food()};
+		
+		for (var i = 0; i > 3; i++)
+		{
+			favFood[i].foodNam = Console.ReadLine();
+		}
+
+		Console.WriteLine("These are your favorite foods:");
+		foreach (var item in favFood)
+		{
+			Console.WriteLine(item.foodNam);
+		}
+	}
+}
+
+public class food
+{
+	public string foodNam = Console.ReadLine();
+}
