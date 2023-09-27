@@ -17,8 +17,4 @@ public class Example2 : MonoBehaviour
         result = number * 2;
         return result;
     }
-    void Update()
-    {
-        
-    }
 }
