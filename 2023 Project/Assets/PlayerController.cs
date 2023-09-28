@@ -4,21 +4,31 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private float jumpForce = 5f;
-    private float gravity = 9.81f;
-    private CharacterController controller;
-    private Vector3 moveDirection;
-    private bool isJumping;
+    public float moveSpeed = 5f;
+    public float jumpForce = 5f;
+    public float gravity = 9.81f;
+    public CharacterController controller;
+    public Vector3 moveDirection;
+    public bool isJumping;
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
-        GetComponent<CharacterController>()>
+        controller = GetComponent<CharacterController>();
+
+        if (controller ==null)
+        {
+            Debug.LogError("No CharacterController component for this object!");
+        }
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
+        if (controller == null)
+        {
+            return;
+        }
+
        float verticalInput = Input.GetAxis("Vertical");
        float horizontalInput = Input.GetAxis("Horizontal");
 
