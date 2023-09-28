@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.81f;
     public CharacterController controller;
     public Vector3 moveDirection;
-    public bool isJumping;
+    public Vector3 velocity;
+    public bool isJumping = false;
     // Start is called before the first frame update
     public void Start()
     {
@@ -35,5 +36,22 @@ public class PlayerController : MonoBehaviour
        Vector3 inputDirection = new Vector3(horizontalInput, 0, verticalInput).normalized;
        Vector3 moveDirection = Quaternion.Euler(0, transform.eulerAngles.y, 0) * inputDirection;
        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+
+       if (controller.isGrounded)
+       {
+            if(Input.GetButtonDown("Jump"))
+            {
+                isJumping = true;
+            }
+       }
+
+       moveDirection.y += Physics.gravity.y * Time.deltaTime;
+
+       if(isJumping)
+       {
+            moveDirection.y = jumpForce;
+            isJumping = false; 
+       }
+       controller.Move(moveDirection * Time.deltaTime);
     }
 }
