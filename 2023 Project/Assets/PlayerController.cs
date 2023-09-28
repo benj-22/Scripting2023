@@ -15,11 +15,6 @@ public class PlayerController : MonoBehaviour
     public void Start()
     {
         controller = GetComponent<CharacterController>();
-
-        if (controller ==null)
-        {
-            Debug.LogError("No CharacterController component for this object!");
-        }
     }
 
     // Update is called once per frame
