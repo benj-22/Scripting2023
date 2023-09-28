@@ -10,7 +10,7 @@ public class IfStatements : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.F))
             TemperatureTest();
 
         cubeTemperature -= Time.deltaTime * 5f;
