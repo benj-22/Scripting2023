@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     public float gravity = 9.81f;
     public CharacterController controller;
     public Vector3 moveDirection;
-    public bool isJumping = false;
+    public bool isJumping;
     // Start is called before the first frame update
     public void Start()
     {
