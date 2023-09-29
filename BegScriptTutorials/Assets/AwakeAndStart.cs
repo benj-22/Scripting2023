@@ -13,7 +13,7 @@ public class AwakeAndStart : MonoBehaviour
     // Start is called before the first frame update as long as it's enabled
     void Start()
     {
-        Debug.Log("Start called.")
+        Debug.Log("Start called.");
     }
 
     // Update is called once per frame

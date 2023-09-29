@@ -19,4 +19,4 @@ public class AxisExample : MonoBehaviour
         transform.position = new Vector3(xPos, 2f, 0);
         textOutput.text = "Value Returned: " + h.ToString("F2");  
     }
-}+
+}

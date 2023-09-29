@@ -12,7 +12,7 @@ public class DoWhileLoop : MonoBehaviour
         do
         {
             print ("You said 'what' first!");
-        } while(shouldContinue) == true;
+        } while(shouldContinue == true);
     }
 
     // Update is called once per frame
