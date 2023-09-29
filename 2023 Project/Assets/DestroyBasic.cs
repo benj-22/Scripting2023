@@ -7,7 +7,7 @@ public class DestroyBasic : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.Space))
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 3f); //3f adds 3-second delay
         }
     }
 }
