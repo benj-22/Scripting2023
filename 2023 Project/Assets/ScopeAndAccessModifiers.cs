@@ -18,7 +18,7 @@ public class ScopeAndAccessModifiers : MonoBehaviour
                         in the inspector */
 
         myOtherClass = new AnotherClass();
-        my
+        myOtherClass.FruitMachine(alpha, myOtherClass.apples);
     }
     void Example(int pens, int crayons)
     {
