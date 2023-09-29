@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableComponents : MonoBehaviour
 {
-    private Light myLight
+    private Light myLight;
     // Start is called before the first frame update
     void Start()
     {
