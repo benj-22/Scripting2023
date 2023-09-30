@@ -25,5 +25,22 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
         moveDirection = transform.TransformDirection(moveDirection);
         controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+
+        if(Input.GetButtonDown("Jump"))
+        {
+            if(controller.isGrounded)
+            {
+                isJumping = true;
+
+                moveDirection.y = jumpForce;
+            }
+        }
+        else
+        {
+            moveDirection.y -= gravity * Time.deltaTime;
+            isJumping = false;
+        }
+
+        controller.Move(moveDirection * Time.deltaTime);
     }
 }
