@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     private CharacterController controller;
     private Vector3 moveDirection;
     private bool isJumping;
+    private bool isCrouching;
+    private bool isSprinting;
+    
 
     void Start()
     {
