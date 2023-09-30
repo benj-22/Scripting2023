@@ -22,23 +22,27 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
+        moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
         moveDirection = transform.TransformDirection(moveDirection);
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime);
+        controller.Move(moveDirection * moveSpeed * Time.deltaTime); 
 
-        if(Input.GetButtonDown("Jump"))
+        if (controller.isGrounded)
         {
-            if(controller.isGrounded)
+            if (Input.GetButtonDown("Jump"))
             {
                 isJumping = true;
-
-                moveDirection.y = jumpForce;
+                
             }
         }
         else
         {
             moveDirection.y -= gravity * Time.deltaTime;
             isJumping = false;
+        }
+
+        if(isJumping == true)
+        {
+            moveDirection.y = jumpForce;
         }
 
         controller.Move(moveDirection * Time.deltaTime);
