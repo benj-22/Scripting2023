@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float moveSpeed = 5f;
-    private float jumpForce = 5f;
-    private float gravity = 9.81f;
+   [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float jumpForce = 5f;
+    [SerializeField] private float gravity = 9.81f;
 
     private CharacterController controller;
     private Vector3 moveDirection;
     private bool isJumping;
     private bool isCrouching;
     private bool isSprinting;
-    
+
 
     void Start()
     {
@@ -29,9 +29,9 @@ public class PlayerController : MonoBehaviour
         moveDirection = transform.TransformDirection(moveDirection);
         controller.Move(moveDirection * moveSpeed * Time.deltaTime); 
 
-        if (controller.isGrounded)
+        if(controller.isGrounded)
         {
-            if (Input.GetButtonDown("Jump"))
+            if(Input.GetButtonDown("Jump"))
             {
                 isJumping = true;
             }
@@ -48,5 +48,19 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(moveDirection * Time.deltaTime);
+
+        if(Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            isCrouching = true;
+        }
+        else
+        {
+            isCrouching = false;
+        }
+
+        if(isCrouching == true)
+        {
+            controller.height = 1f;
+        }
     }
 }
