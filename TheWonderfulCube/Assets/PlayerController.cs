@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private bool isCrouching;
     private bool isSprinting;
 
+    private float originalControllerHeight;
 
     void Start()
     {
@@ -27,6 +28,20 @@ public class PlayerController : MonoBehaviour
 
         moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
         moveDirection = transform.TransformDirection(moveDirection);
+
+         if (Input.GetKeyDown(KeyCode.C))
+        {
+            isCrouching = !isCrouching;
+            if (isCrouching)
+            {
+                controller.height = originalControllerHeight / 2f;
+            }
+            else
+            {
+                controller.height = originalControllerHeight;
+            }
+        }
+
         controller.Move(moveDirection * moveSpeed * Time.deltaTime); 
 
         if(controller.isGrounded)
@@ -48,19 +63,5 @@ public class PlayerController : MonoBehaviour
         }
 
         controller.Move(moveDirection * Time.deltaTime);
-
-        if(Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            isCrouching = true;
-        }
-        else
-        {
-            isCrouching = false;
-        }
-
-        if(isCrouching == true)
-        {
-            controller.height = 1f;
-        }
     }
 }
