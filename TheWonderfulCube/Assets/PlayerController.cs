@@ -13,12 +13,14 @@ public class PlayerController : MonoBehaviour
     private bool isJumping;
     private bool isCrouching;
     private bool isSprinting;
+    private bool isGrounded;
 
-    private float originalControllerHeight;
+    private float originalControllerHeight = 2.0f;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        isGrounded = true;
     }
 
     void Update()
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(moveDirection * moveSpeed * Time.deltaTime); 
 
-        if(controller.isGrounded)
+        if(isGrounded)
         {
             if(Input.GetButtonDown("Jump"))
             {
