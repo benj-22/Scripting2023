@@ -12,11 +12,6 @@ public class PlayerController : MonoBehaviour
     public Transform blaster;
     public GameObject laser;
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         //variable initialized--set horizontalInput to receive values from keyboard
@@ -43,5 +38,11 @@ public class PlayerController : MonoBehaviour
             //Create laser at the blaster transform position, maintaining the transform rotation of laser
             Instantiate(laser, blaster.transform.position, laser.transform.rotation);
         }
+    }
+
+    //Objects that have a trigger get deleted after hitting player
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
     }
 }
