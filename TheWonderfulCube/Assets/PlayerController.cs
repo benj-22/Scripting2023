@@ -49,19 +49,10 @@ public class PlayerController : MonoBehaviour
         {
             if(Input.GetButtonDown("Jump"))
             {
-                isJumping = true;
+                moveDirection.y = jumpForce;
             }
         }
-        else
-        {
-            isJumping = false;
-        }
-
-        if(isJumping == true)
-        {
-            moveDirection.y = jumpForce;
-        }
-
+       
         controller.Move(moveDirection * Time.deltaTime);
     }
 }
