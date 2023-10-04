@@ -28,8 +28,9 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        moveDirection = new Vector3(horizontalInput, 0f, verticalInput).normalized;
-        moveDirection = transform.TransformDirection(moveDirection);
+        moveDirection.x = horizontalInput * moveSpeed;
+        moveDirection.y -= gravity * Time.deltaTime;
+        moveDirection.z = verticalInput * moveSpeed;
 
          if (Input.GetKeyDown(KeyCode.C))
         {
@@ -44,8 +45,6 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        controller.Move(moveDirection * moveSpeed * Time.deltaTime); 
-
         if(isGrounded)
         {
             if(Input.GetButtonDown("Jump"))
@@ -55,7 +54,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            moveDirection.y -= gravity * Time.deltaTime;
             isJumping = false;
         }
 
