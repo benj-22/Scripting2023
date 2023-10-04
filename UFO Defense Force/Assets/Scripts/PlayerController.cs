@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
 
     public float xRange;
 
+    public Transform blaster;
+    public GameObject laser;
+
     void Start()
     {
         
@@ -28,9 +31,17 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(-xRange,transform.position.y, transform.position.z);
         }
         
+        //Right side wall
         if(transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange,transform.position.y, transform.position.z);
+        }
+
+        //If spacebar is pressed, fire laser
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            //Create laser at the blaster transform position, maintaining the transform rotation of laser
+            Instantiate(laser, blaster.transform.position, laser.transform.rotation);
         }
     }
 }
