@@ -4,13 +4,6 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    private int capsules;
-    // Start is called before the first frame update
-    void Start()
-    {   
-        capsules = 0;
-    }
-
    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -20,7 +13,7 @@ public class Collect : MonoBehaviour
             
             if (playerController != null)
             {
-                playerController.AddToInventory(value); // Add the pickup's value to the player's inventory
+                playerController.AddToInventory(1); // Add the pickup's value to the player's inventory
             }
 
             // Destroy the pickup

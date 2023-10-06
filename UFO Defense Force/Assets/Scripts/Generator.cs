@@ -15,6 +15,7 @@ public class Generator : MonoBehaviour
 
     void SpawnPowerup()
     {
+        Debug.Log("spawn initialized");
         for(int i = 0; i < numberOfPowerups; i++)
         {
             Instantiate(powerUp, GeneratedPosition(), Quaternion.identity);
@@ -24,7 +25,7 @@ public class Generator : MonoBehaviour
     Vector3 GeneratedPosition()
     {
         int x,y,z;
-        x = UnityEngine.Random.Range (-20,20);
+        x = UnityEngine.Random.Range (-19,20);
         y = UnityEngine.Random.Range (0,1);
         z = UnityEngine.Random.Range (17,20);
         return new Vector3(x,y,z);

@@ -45,4 +45,13 @@ public class PlayerController : MonoBehaviour
     {
         Destroy(other.gameObject);
     }
+
+    private int inventory = 0; // Player's inventory
+
+    public void AddToInventory(int value)
+    {
+        // Add the collected item's value to the inventory
+        inventory += value;
+        Debug.Log("Inventory is now " + inventory + " pickups");
+    }
 }
