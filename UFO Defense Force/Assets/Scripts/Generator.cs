@@ -10,7 +10,7 @@ public class Generator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnPowerup", 2.0f, Random.Range(1,45));
+        InvokeRepeating("SpawnPowerup", 2.0f, 5f);//Random.Range(1,45));
     }
 
     void SpawnPowerup()

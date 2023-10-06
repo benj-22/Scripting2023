@@ -8,16 +8,8 @@ public class Collect : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            // Player collected the pickup
-            PlayerController playerController = other.GetComponent<PlayerController>();
-            
-            if (playerController != null)
-            {
-                playerController.AddToInventory(1); // Add the pickup's value to the player's inventory
-            }
-
-            // Destroy the pickup
-            Destroy(gameObject);
+            // Check if the colliding object is the Player
+            Destroy(gameObject); // Destroy the PowerupContainer
         }
     }
 }
