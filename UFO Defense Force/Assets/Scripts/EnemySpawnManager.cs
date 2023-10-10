@@ -6,12 +6,18 @@ public class EnemySpawnManager : MonoBehaviour
 {
     //array to store UFO ships
     public GameObject[] ufoPreFabs; //of type GameObject, brackets show that it's an array
-    public int ufoIndex; //picks from set of values in UFO prefabs
+    private float spawnRangeX  = 20f;
+    private float spawnPosZ = 20f;
     
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.S))
-            Instantiate(ufoPreFabs[ufoIndex],new Vector3(0,0,20), ufoPreFabs[ufoIndex].transform.rotation);
+        {
+            Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX,spawnRangeX),0,spawnPosZ);
+            int ufoIndex = Random.Range(0,ufoPreFabs.Length); //picks from set of values in UFO prefabs, ufoPreFabs.Length makes it so we can extend array length if needed
+            Instantiate(ufoPreFabs[ufoIndex],spawnPos, ufoPreFabs[ufoIndex].transform.rotation); // Spawns indexed ufo from the array at random position on x axis
+        }
+            
     }
 }
