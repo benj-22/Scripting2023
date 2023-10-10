@@ -38,20 +38,16 @@ public class PlayerController : MonoBehaviour
             //Create laser at the blaster transform position, maintaining the transform rotation of laser
             Instantiate(laser, blaster.transform.position, laser.transform.rotation);
         }
+        
     }
-
-    //Objects that have a trigger get deleted after hitting player
-    private void OnTriggerEnter(Collider other)
+     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-    }
-
-    private int inventory = 0; // Player's inventory
-
-    public void AddToInventory(int value)
-    {
-        // Add the collected item's value to the inventory
-        inventory += value;
-        Debug.Log("Inventory is now " + inventory + " pickups");
+        if (other.CompareTag("PowerupContainer"))
+        {
+            public pickups++;
+            // Check if the colliding object is the Player
+            Destroy(other.gameObject); // Destroy the PowerupContainer
+            Debug.Log("Powerups: " + pickups);
+        }
     }
 }

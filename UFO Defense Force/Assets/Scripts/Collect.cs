@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-   private void OnTriggerEnter(Collider other)
+    public int pickups;
+
+    void Awake()
     {
-        if (other.CompareTag("Player"))
-        {
-            // Check if the colliding object is the Player
-            Destroy(gameObject); // Destroy the PowerupContainer
-        }
+        pickups = 0;
     }
+  
 }

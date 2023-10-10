@@ -10,11 +10,10 @@ public class EnemySpawnManager : MonoBehaviour
     private float spawnPosZ = 20f;
 
     private float startDelay = 2f;
-    private float spawnInterval = 1.5f;
 
     void Start()
     {
-        InvokeRepeating("SpawnRandomUfo", startDelay, spawnInterval);
+        InvokeRepeating("SpawnRandomUfo", startDelay, Random.Range(1,4));
     }
     
     // Update is called once per frame
