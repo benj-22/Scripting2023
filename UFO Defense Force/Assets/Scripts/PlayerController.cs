@@ -11,6 +11,12 @@ public class PlayerController : MonoBehaviour
 
     public Transform blaster;
     public GameObject laser;
+    public int pickups;
+
+    void Start()
+    {
+        pickups = 0;
+    }
 
     void Update()
     {
@@ -40,11 +46,12 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+    
      private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("PowerupContainer"))
         {
-            public pickups++;
+            pickups++;
             // Check if the colliding object is the Player
             Destroy(other.gameObject); // Destroy the PowerupContainer
             Debug.Log("Powerups: " + pickups);

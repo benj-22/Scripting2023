@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    public int pickups;
+    
 
     void Awake()
     {
-        pickups = 0;
+        
     }
   
 }
