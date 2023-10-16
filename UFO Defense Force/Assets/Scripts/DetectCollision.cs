@@ -5,7 +5,7 @@ using UnityEngine;
 public class DetectCollision : MonoBehaviour
 {
    public ScoreManager scoreManager; //store reference to score manager
-   public GameManager gameManager;
+   public GameManager gameManager; //store reference to game manager
 
    public int scoreToGive;
 
