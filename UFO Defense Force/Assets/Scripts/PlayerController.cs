@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public Transform blaster;
     public GameObject laser;
-    public GameManager (gameManager);
+    public GameManager gameManager;
     public int pickups;
 
     void Start()
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //If spacebar is pressed, fire laser
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && gameManager.isGameOver == false)//spacebar pressed and game is running, lasers are fired. Doesn't shoot when game is over
         {
             //Create laser at the blaster transform position, maintaining the transform rotation of laser
             Instantiate(laser, blaster.transform.position, laser.transform.rotation);
