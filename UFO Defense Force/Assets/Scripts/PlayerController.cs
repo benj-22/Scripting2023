@@ -11,11 +11,13 @@ public class PlayerController : MonoBehaviour
 
     public Transform blaster;
     public GameObject laser;
+    public GameManager (gameManager);
     public int pickups;
 
     void Start()
     {
         pickups = 0;
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     void Update()
