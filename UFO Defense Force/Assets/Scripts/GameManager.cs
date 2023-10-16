@@ -28,8 +28,10 @@ public class GameManager : MonoBehaviour
             EndGame(); //starts endgame when isgameover is true
         }
         else
+        {
             gameOverText.gameObject.SetActive(false); //keep ui text game over hidden
             //Debug.Log("GameOverText found");
+        }
     }
 
     public void EndGame() //endgame method
