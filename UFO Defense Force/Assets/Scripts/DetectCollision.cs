@@ -34,6 +34,8 @@ public class DetectCollision : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+      if (other.CompareTag("Projectile"))
+      {
         explosion.Play();
         scoreManager.IncreaseScore(scoreToGive);
         Destroy(other.gameObject);
@@ -41,5 +43,15 @@ public class DetectCollision : MonoBehaviour
         sphere.enabled = false;
         StartCoroutine(DelayedDestroy());
         ufoAudio.PlayOneShot(boom);
+      }
+      else
+      {
+         explosion.Play();
+        scoreManager.IncreaseScore(scoreToGive);
+        ufo.enabled = false;
+        sphere.enabled = false;
+        StartCoroutine(DelayedDestroy());
+        ufoAudio.PlayOneShot(boom);
+      }
     }
 }

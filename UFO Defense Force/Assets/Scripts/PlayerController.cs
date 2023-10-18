@@ -9,11 +9,17 @@ public class PlayerController : MonoBehaviour
 
     public float xRange;
 
+    public GameObject ufo;
+    public EnemySpawnManager spawnManager;
+
     public Transform blaster;
     public GameObject laser;
     public GameManager gameManager;
     public int pickups;
     public ParticleSystem blast;
+    public ParticleSystem gameOver;
+    public MeshRenderer player;
+    public BoxCollider box;
 
     public AudioClip laserBlast;
     public AudioClip pickupGet;
@@ -23,6 +29,7 @@ public class PlayerController : MonoBehaviour
     void Awake()
     {
         blast.Stop();
+        gameOver.Stop();
     }
 
     void Start()
@@ -30,6 +37,7 @@ public class PlayerController : MonoBehaviour
         pickups = 0;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         playerAudio = GetComponent<AudioSource>();
+        spawnManager = ufo.GetComponent<EnemySpawnManager>();
     }
 
     void Update()
@@ -62,6 +70,12 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
     
      private void OnTriggerEnter(Collider other)
     {
@@ -74,8 +88,9 @@ public class PlayerController : MonoBehaviour
             playerAudio.PlayOneShot(pickupGet);
         }
 
-        if (other.CompareTag(""))
+        if (other.CompareTag("Ufo"))
         {
+
             gameManager.isGameOver = true;
             Debug.Log("Game Over...");
             Destroy(gameObject);
