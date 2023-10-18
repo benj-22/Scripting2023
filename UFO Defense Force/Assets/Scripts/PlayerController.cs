@@ -74,7 +74,10 @@ public class PlayerController : MonoBehaviour
     IEnumerator DelayedDestroy()
     {
         yield return new WaitForSeconds(2);
+        gameManager.isGameOver = true;
+        Debug.Log("Game Over...");
         Destroy(gameObject);
+        Time.timeScale = 0;
     }
     
      private void OnTriggerEnter(Collider other)
@@ -90,11 +93,8 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Ufo"))
         {
-
-            gameManager.isGameOver = true;
-            Debug.Log("Game Over...");
-            Destroy(gameObject);
-            Time.timeScale = 0;
+            gameOver.Play();
+            playerAudio.PlayOneShot(playerDeath);
         }
     }
 }
