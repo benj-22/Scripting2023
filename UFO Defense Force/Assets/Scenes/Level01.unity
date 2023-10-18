@@ -451,7 +451,7 @@ Transform:
   m_GameObject: {fileID: 839056008}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.84}
+  m_LocalPosition: {x: 0, y: 0, z: 1.13}
   m_LocalScale: {x: 0.6473037, y: 2.1652827, z: 0.45718098}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -839,9 +839,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ufoPreFabs:
-  - {fileID: 6304935106506049349, guid: 094d2cf6bd755114ea06de02572678c4, type: 3}
-  - {fileID: 1390815481304003241, guid: cdb83224b105cb844afd32624201f4af, type: 3}
-  - {fileID: 6013460818880401656, guid: 4a7d2ffe8c2db0e4287cf5008cbe3c42, type: 3}
+  - {fileID: 7967853070042899939, guid: 030cf7c39ed84294299a0d402147267b, type: 3}
+  - {fileID: 7515701396139848431, guid: 10077fda294368e4b888e77543307b1f, type: 3}
+  - {fileID: 7942963572463411403, guid: e1cef6dd0de3ac741a87949929177320, type: 3}
 --- !u!4 &1321369923
 Transform:
   m_ObjectHideFlags: 0

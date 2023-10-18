@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7097602678261942318}
-  - component: {fileID: 8994691162602856609}
   - component: {fileID: -7015560884080175135}
   - component: {fileID: 2891963921918915154}
   - component: {fileID: -7451269361427612873}
+  - component: {fileID: 5954556265820124961}
   m_Layer: 0
   m_Name: Bolt_Container
   m_TagString: Untagged
@@ -36,19 +36,6 @@ Transform:
   - {fileID: 7074484446761983221}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8994691162602856609
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2541340157166345474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 73f474313e182974cb96bbea60e94eda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 50
 --- !u!114 &-7015560884080175135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +50,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   topBounds: 30
   lowerBounds: -15
+  gameManager: {fileID: 0}
 --- !u!54 &2891963921918915154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113,6 +101,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5954556265820124961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2541340157166345474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ffb50be6d4440546ae5b232559ca748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserSpeed: 50
 --- !u!1001 &2874980250957738984
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,24 +4,42 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-   public ScoreManager scoreManager; //store reference to score manager
-   
-   
+    public ScoreManager scoreManager; // Store reference to score manager
+    public ParticleSystem explosion;
+    public int scoreToGive;
+    public MeshRenderer ufo;
+    public SphereCollider sphere;
 
-   public int scoreToGive;
+    public AudioClip boom;
+    private AudioSource ufoAudio;
 
-   void Start()
-   {
-      scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>(); //find ScoreManager gameobject and reference ScoreManager script component
-      
-      
-   }
+    void Awake()
+    {
+        explosion.Stop();
+    }
 
-   void OnTriggerEnter(Collider other) //once Trigger has been entered, record collision in the argument variable "other"
-   {
-      
-      scoreManager.IncreaseScore(scoreToGive); //increase the score
-      Destroy(gameObject); //destroy this object
-      Destroy(other.gameObject); //destroy collided object
-   }
+    void Start()
+    {
+        scoreManager = GameObject.Find("ScoreManager").GetComponent<ScoreManager>();
+        ufo.enabled = true;
+        sphere.enabled = true;
+        ufoAudio = GetComponent<AudioSource>();
+    }
+
+    IEnumerator DelayedDestroy()
+    {
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        explosion.Play();
+        scoreManager.IncreaseScore(scoreToGive);
+        Destroy(other.gameObject);
+        ufo.enabled = false;
+        sphere.enabled = false;
+        StartCoroutine(DelayedDestroy());
+        ufoAudio.PlayOneShot(boom);
+    }
 }

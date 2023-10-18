@@ -13,11 +13,23 @@ public class PlayerController : MonoBehaviour
     public GameObject laser;
     public GameManager gameManager;
     public int pickups;
+    public ParticleSystem blast;
+
+    public AudioClip laserBlast;
+    public AudioClip pickupGet;
+    public AudioClip playerDeath;
+    private AudioSource playerAudio;
+
+    void Awake()
+    {
+        blast.Stop();
+    }
 
     void Start()
     {
         pickups = 0;
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -45,6 +57,8 @@ public class PlayerController : MonoBehaviour
         {
             //Create laser at the blaster transform position, maintaining the transform rotation of laser
             Instantiate(laser, blaster.transform.position, laser.transform.rotation);
+            blast.Play();
+            playerAudio.PlayOneShot(laserBlast);
         }
         
     }
@@ -57,6 +71,15 @@ public class PlayerController : MonoBehaviour
             // Check if the colliding object is the Player
             Destroy(other.gameObject); // Destroy the PowerupContainer
             Debug.Log("Powerups: " + pickups);
+            playerAudio.PlayOneShot(pickupGet);
+        }
+
+        if (other.CompareTag(""))
+        {
+            gameManager.isGameOver = true;
+            Debug.Log("Game Over...");
+            Destroy(gameObject);
+            Time.timeScale = 0;
         }
     }
 }
