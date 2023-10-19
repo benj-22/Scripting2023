@@ -22,6 +22,12 @@ public class GameOverMenu : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad); //Which scene will load
     }
 
+    IEnumerator DelayedQuit()
+    {
+        yield return new WaitForSeconds(1);
+        Application.Quit();
+    }
+
     // Start is called before the first frame update
     public void StartGame()
     {
@@ -33,7 +39,7 @@ public class GameOverMenu : MonoBehaviour
     public void QuitGame()
     {
         goAudio.PlayOneShot(quit);
-        Application.Quit();
+        StartCoroutine(DelayedQuit());
         //Debug.Log("Quit Game");
     }
 }
