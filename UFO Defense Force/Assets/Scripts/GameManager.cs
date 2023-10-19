@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
             //Debug.Log("endgame method initialized");
             EndGame(); //starts endgame when isgameover is true
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
     }
 
     public void EndGame() //endgame method
@@ -38,4 +44,6 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(sceneToLoad); //Which scene will load
         //Time.timeScale = 0; //casts stop on the game
     }
+
+    
 }
