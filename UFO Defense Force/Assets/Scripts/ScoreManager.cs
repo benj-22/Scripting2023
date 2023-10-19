@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public int score; //keeps score value
     public TextMeshProUGUI scoreText; // visual text element to be modified
     
+    
     //IncreaseScore is a custom method
     public void IncreaseScore(int amount) //method increases score by predetermined amount set in score variable when called
     {
@@ -26,4 +27,5 @@ public class ScoreManager : MonoBehaviour
     {
         scoreText.text = "Score: " + score;
     }
+    
 }

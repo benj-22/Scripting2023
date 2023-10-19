@@ -46,12 +46,9 @@ public class DetectCollision : MonoBehaviour
       }
       else
       {
-         explosion.Play();
-        scoreManager.IncreaseScore(scoreToGive);
         ufo.enabled = false;
         sphere.enabled = false;
         StartCoroutine(DelayedDestroy());
-        ufoAudio.PlayOneShot(boom);
       }
     }
 }
