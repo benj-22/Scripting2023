@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2477129dd5777cc45acb0e9d9c063da9, type: 3}
-  m_Name: FloatDataObj
+  m_Script: {fileID: 11500000, guid: db82677ff3015fa459bcf56e897c5df3, type: 3}
+  m_Name: AmmoIntData
   m_EditorClassIdentifier: 
-  value: 10
+  value: 5

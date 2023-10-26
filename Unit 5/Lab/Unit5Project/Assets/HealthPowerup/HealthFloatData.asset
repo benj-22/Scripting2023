@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2477129dd5777cc45acb0e9d9c063da9, type: 3}
-  m_Name: FloatDataObj
+  m_Name: HealthFloatData
   m_EditorClassIdentifier: 
-  value: 10
+  value: 50
