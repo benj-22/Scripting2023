@@ -8,7 +8,8 @@ public class HealthController : MonoBehaviour
     [SerializeField]
     private float maxHealth;
 
-    [SerializeField] private float currentHealth;
+    //[SerializeField] 
+    private float currentHealth;
 
     [SerializeField]
     private float respawnTime;
