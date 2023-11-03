@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FloatData : ScriptableObject
 {
-    [SerializeField] private float value;
+    [SerializeField] public float value;
 
     public void SetValue (float num)
     {
@@ -14,5 +14,10 @@ public class FloatData : ScriptableObject
     {
         get {return value;}
         set {this.value = value;}
+    }
+
+    public void UpdateValue(float num)
+    {
+        value += num;
     }
 }
