@@ -5,28 +5,54 @@ using UnityEngine.Events;
 
 public class CoroutineBehavior : MonoBehaviour //coroutines live in monobehavior
 {
-    public UnityEvent startEvent, repeatEvent, endEvent;
+    public UnityEvent startEvent, startCountEvent, repeatCountEvent, endCountEvent, repeatUntilFalseEvent;
+    public bool canRun;
     public intData counterNum;
 
     public float seconds = 3.0f;
     private WaitForSeconds wfsObj;
     private WaitForFixedUpdate wffuObj;
+
+    private void Start()
+    {
+        startEvent.Invoke();
+    }
+
+    public void StartCounting()
+    {
+        StartCoroutine(Counting());
+    }
     
-    IEnumerator Start()
+    private IEnumerator Counting()
     {
         wfsObj = new WaitForSeconds(seconds);
         wffuObj = new WaitForFixedUpdate();
 
-        startEvent.Invoke();
+        startCountEvent.Invoke();
         yield return wfsObj;
 
         while(counterNum.value > 0)
         {
-            repeatEvent.Invoke();
+            repeatCountEvent.Invoke();
             counterNum.value --;
             yield return wfsObj;
         }
 
-        endEvent.Invoke();
+        endCountEvent.Invoke();
+    }
+
+    public void StartRepeatUntilFalse()
+    {
+        canRun = true;
+        StartCoroutine(RepeatUntilFalse());
+    }
+
+    private IEnumerator RepeatUntilFalse()
+    {
+        while (canRun)
+        {
+            yield return wfsObj;
+            repeatUntilFalseEvent.Invoke();
+        }
     }
 }
