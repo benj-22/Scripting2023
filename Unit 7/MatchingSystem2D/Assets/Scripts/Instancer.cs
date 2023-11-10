@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Instancer : MonoBehaviour
+[CreateAssetMenu]
+
+public class Instancer : ScriptableObject
 {
-    // Start is called before the first frame update
-    void Start()
+    public GameObject prefab;
+    public void CreateInstance()
     {
-        
+        Instantiate(prefab);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void CreateInstance(Vector3Data obj)
     {
-        
+        Instantiate(prefab, obj.value, Quaternion.identity);
     }
+
 }

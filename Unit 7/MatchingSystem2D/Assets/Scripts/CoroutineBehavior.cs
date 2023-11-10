@@ -16,6 +16,8 @@ public class CoroutineBehavior : MonoBehaviour //coroutines live in monobehavior
     private void Start()
     {
         startEvent.Invoke();
+        wfsObj = new WaitForSeconds(seconds);
+        wffuObj = new WaitForFixedUpdate();
     }
 
     public void StartCounting()
@@ -25,9 +27,6 @@ public class CoroutineBehavior : MonoBehaviour //coroutines live in monobehavior
     
     private IEnumerator Counting()
     {
-        wfsObj = new WaitForSeconds(seconds);
-        wffuObj = new WaitForFixedUpdate();
-
         startCountEvent.Invoke();
         yield return wfsObj;
 
