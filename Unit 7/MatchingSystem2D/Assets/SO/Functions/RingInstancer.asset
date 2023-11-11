@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a61f42c30bf1d0439b60eff6615fe17, type: 3}
-  m_Name: PrefabInstancer
+  m_Name: RingInstancer
   m_EditorClassIdentifier: 
   prefab: {fileID: 9054014989812099394, guid: 8a919cb09b3054046aea0bfc9ea51255, type: 3}
