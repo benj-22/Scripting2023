@@ -1,18 +1,9 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ColorIDDataList : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+[CreateAssetMenu]
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+public class ColorIDDataList : ScriptableObject
+{
+    public List<ColorID> colorIDList;
 }
