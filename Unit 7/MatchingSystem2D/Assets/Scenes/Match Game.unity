@@ -163,6 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   idObj: {fileID: 11400000, guid: 98b9fa12de5765745bf4115705d91f83, type: 2}
+  startEvent:
+    m_PersistentCalls:
+      m_Calls: []
   matchEvent:
     m_PersistentCalls:
       m_Calls:
@@ -265,7 +268,7 @@ MonoBehaviour:
           m_StringArgument: GameOver
           m_BoolArgument: 0
         m_CallState: 2
-  noMatchDelayed:
+  noMatchDelayedEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!54 &29672709
