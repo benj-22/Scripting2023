@@ -5,7 +5,16 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/Tutorials/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Instancing.unity
+    guid: 4915f6822ebdd44488735ced424a3aa5
+  - enabled: 0
+    path: Assets/Scenes/Tutorials/321Go!.unity
+    guid: 8e52b8af66c9ca142b465d90feee409b
+  - enabled: 0
+    path: Assets/Scenes/Tutorials/Match Game.unity
+    guid: f70687d17db2fc34fbb099676176fc04
   m_configObjects: {}
